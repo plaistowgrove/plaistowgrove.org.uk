@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="{{ meta.lang }}">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="canonical" href="{{ meta.url }}{{ page.url }}" />
+        <title>{{ meta.title }}</title>
+        <link rel="stylesheet" href="/assets/fonts.css">
+        <link rel="stylesheet" href="/assets/style.css">
+    </head>
+    <body>
+        {% include "header.html" %}
+        <main id="main-content" tabindex="-1">
+            {{ content | safe }}
+        </main>
+        {% include "footer.html" %}
+    </body>
+</html>

@@ -1,0 +1,15 @@
+{%- for fontface in collections.fontfaces -%}
+{%- if not fontface.extended -%}
+/* {{ fontface.key }} */
+@font-face {
+    font-family: "{{ fontface.family }}";
+    font-weight: {{ fontface.weight }};
+    font-style: {{ fontface.style }};
+    font-display: swap;
+    src: {% for src in fontface.srcs | reverse -%}
+            url("{{ src.path }}") format("{{ src.format }}")
+            {%- if loop.revindex0 > 0 %}, {% endif -%}
+         {% endfor -%};
+}
+{% endif -%}
+{%- endfor -%}
