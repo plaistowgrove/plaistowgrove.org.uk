@@ -17,11 +17,16 @@
   "scripts": {
     "start": "npx @11ty/eleventy --serve",
     "watch": "npx @11ty/eleventy --watch",
-    "build": "npx @11ty/eleventy"
+    "build": "npm run build:data; npm run build:site",
+    "build:data": "npm run schedule",
+    "build:site": "npx @11ty/eleventy",
+    "schedule": "node ./scripts/update-schedule.js"
   },
   "dependencies": {
     "@11ty/eleventy": "^3.1.6",
     "@fontsource/montserrat": "^5.2.8",
-    "@fontsource/open-sans": "^5.2.7"
+    "@fontsource/open-sans": "^5.2.7",
+    "get-timezone-offset": "^1.0.5",
+    "node-ical": "^0.26.1"
   }
 }

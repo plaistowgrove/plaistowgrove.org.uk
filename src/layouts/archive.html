@@ -1,0 +1,25 @@
+---
+layout: base.html
+---
+
+<div class="constrained narrow">
+    <h1>{{ title }}</h1>
+
+    {{ content | safe }}
+</div>
+
+{% if pagination.items.length %}
+    <div class="constrained wide">
+        <ol class="grid large">
+            {%- for item in pagination.items -%}
+                <li class="grid-item">
+                    <article class="card">
+                        <h2 class="title">
+                            <a href="{{ item.page.url }}" class="main">{{ item.data.title }}</a>
+                        </h2>
+                    </article>
+                </li>
+            {%- endfor -%}
+        </ol>
+    </div>
+{% endif %}

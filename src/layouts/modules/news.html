@@ -1,0 +1,11 @@
+<ol class="grid">
+    {%- for update in collections.news | slice(6) | first -%}
+        <li class="grid-item">
+            <article class="card">
+                <h3 class="title">
+                    <a href="{{ update.page.url }}" class="main">{{ update.data.title }}</a>
+                </h3>
+            </article>
+        </li>
+    {%- endfor -%}
+</ul>

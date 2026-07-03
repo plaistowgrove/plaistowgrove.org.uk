@@ -1,7 +1,16 @@
 <header id="main-header">
     <div class="constrained wide">
         <div class="wrapper">
-            <p>{{ meta.title }}</p>
+            <p><a href="index.md">PGRA</a></p>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.md" {% ariaCurrent "index.md" %}>Home</a></li>
+                    <li><a href="about.md" {% ariaCurrent "about.md" %}>About Us</a></li>
+                    <li><a href="events/index.md" {% ariaCurrent "events/index.md" %}>Events</a></li>
+                    <li><a href="news/index.md" {% ariaCurrent "news/index.md" %}>News</a></li>
+                    <li><a href="contact.md" {% ariaCurrent "contact.md" %}>Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </div>
 </header>
