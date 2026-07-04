@@ -29,6 +29,16 @@ export default async function (eleventy) {
 		}
 	};
 
+	let templateConfig;
+	eleventy.on("eleventy.config", (tmplConfigInstance) => {
+		templateConfig = tmplConfigInstance;
+	});
+
+	let extensionMap;
+	eleventy.on("eleventy.extensionmap", (map) => {
+		extensionMap = map;
+	});
+
     const fontDir = 'assets/fonts';
     const fonts = {
         ["Montserrat"]: fontPath("montserrat"),
@@ -81,6 +91,30 @@ export default async function (eleventy) {
     eleventy.addPlugin(InputPathToUrlTransformPlugin);
     eleventy.addPlugin(RenderPlugin);
 
+    eleventy.addFilter("datestring", function(date, _options, locale = "en-GB") {
+        const options = {
+            timeZone: "Europe/London",
+            ...(_options || {
+                day: "numeric",
+                month: "numeric",
+                year: "numeric",
+            }),
+        };
+
+        return date.toLocaleDateString(locale, options);
+    });
+    eleventy.addFilter("timestring", function(date, _options, locale = "en-GB") {
+        const options = {
+            timeZone: "Europe/London",
+            ...(_options || {
+                hour: "2-digit",
+                minute: "2-digit",
+            }),
+        };
+
+        return date.toLocaleTimeString(locale, options);
+    });
+
     eleventy.addExtension("ncss", {
         outputFileExtension: "css",
         key: "njk",
@@ -96,7 +130,7 @@ export default async function (eleventy) {
     eleventy.addShortcode("module", async function(module, ...args) {
         const filepath = path.join(config.dir.input, config.dir.modules, '/', module);
         try {
-            const render = await RenderPlugin.File(filepath, {}, "njk");
+            const render = await RenderPlugin.File(filepath, { templateConfig, extensionMap }, "njk");
             return await RenderManager.render(render, {args}, this.ctx);
         } catch (err) {
             console.error('⚠️ Unable to render module:', module);
@@ -111,12 +145,7 @@ export default async function (eleventy) {
             return ` aria-current="page"`;
         }
         return "";
-    })
-    eleventy.addShortcode("shortdate", function(date) {
-        const month = (date.getUTCMonth() + 1).toString(10).padStart(2, "0");
-        const day = date.getUTCDate().toString(10).padStart(2, "0");
-        return `${day}/${month}`;
-    })
+    });
 
     eleventy.addPassthroughCopy('src/site/assets/*.css');
     eleventy.addPassthroughCopy('src/site/assets/*.js');

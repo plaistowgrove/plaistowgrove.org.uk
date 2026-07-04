@@ -4,15 +4,15 @@
         {%- if day.events -%}
             {%- set empty = false -%}
             <li class="day">
-                <time datetime="{{ day.key }}">{{ day.date.toLocaleDateString("en-GB", {weekday: "long"}) }} {{ day.date.toLocaleDateString("en-GB", {day: "numeric", month: "numeric"}) }}</time>
+                <time datetime="{{ day.key }}">{{ day.date | datestring({weekday: "long"}) }} {{ day.date | datestring({day: "numeric", month: "numeric" }) }}</time>
                 <ul class="events">
                     {%- for event in day.events -%}
                         <li class="event" data-calendar="{{ event.calendar }}">
                             {{ event.summary }}
                             {% if event.start -%}
-                                &middot; {{ event.start.toLocaleTimeString("en-GB", {hour: "2-digit", minute: "2-digit"}) }}
+                                &middot; {{ event.start | timestring }}
                                 {%- if event.end -%}
-                                    -{{ event.end.toLocaleTimeString("en-GB", {hour: "2-digit", minute: "2-digit"}) }}
+                                    -{{ event.end | timestring }}
                                 {%- endif -%}
                             {%- endif %}
                             {%- if event.location -%}<span>{{ event.location }}</span>{%- endif -%}
