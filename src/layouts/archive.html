@@ -17,6 +17,7 @@ layout: base.html
                         <h2 class="title">
                             <a href="{{ item.page.url }}" class="main">{{ item.data.title }}</a>
                         </h2>
+                        <time datetime="{{ item.page.date.toISOString().split('T') | first }}">{{ item.page.date | datestring({ day: "numeric", month: "short", year: "2-digit" }) }}</time>
                     </article>
                 </li>
             {%- endfor -%}

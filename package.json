@@ -17,10 +17,10 @@
   "scripts": {
     "start": "npx @11ty/eleventy --serve",
     "watch": "npx @11ty/eleventy --watch",
-    "build": "npm run build:data; npm run build:site",
-    "build:data": "npm run schedule",
+    "build": "npm run build:schedule; npm run build:site",
+    "build:schedule": "node ./scripts/update-schedule.js",
     "build:site": "npx @11ty/eleventy",
-    "schedule": "node ./scripts/update-schedule.js"
+    "crypto": "node ./scripts/crypto.js"
   },
   "dependencies": {
     "@11ty/eleventy": "^3.1.6",

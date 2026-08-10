@@ -10,7 +10,7 @@
                         <li class="event" data-calendar="{{ event.calendar }}">
                             {{ event.summary }}
                             {% if event.start -%}
-                                &middot; {{ event.start | timestring }}
+                                &bullet; {{ event.start | timestring }}
                                 {%- if event.end -%}
                                     -{{ event.end | timestring }}
                                 {%- endif -%}

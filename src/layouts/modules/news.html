@@ -5,6 +5,7 @@
                 <h3 class="title">
                     <a href="{{ update.page.url }}" class="main">{{ update.data.title }}</a>
                 </h3>
+                <time datetime="{{ update.page.date.toISOString().split('T') | first }}">{{ update.page.date | datestring({ day: "numeric", month: "short", year: "2-digit" }) }}</time>
             </article>
         </li>
     {%- endfor -%}

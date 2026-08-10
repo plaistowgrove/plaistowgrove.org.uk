@@ -3,7 +3,7 @@ import path from 'node:path';
 import { glob } from 'node:fs/promises';
 import { fileURLToPath } from 'url';
 
-import { InputPathToUrlTransformPlugin, RenderPlugin } from '@11ty/eleventy';
+import { IdAttributePlugin, InputPathToUrlTransformPlugin, RenderPlugin } from '@11ty/eleventy';
 const RenderManager = new RenderPlugin.RenderManager();
 
 function fontPath(fontName) {
@@ -88,6 +88,7 @@ export default async function (eleventy) {
         });
     });
 
+    eleventy.addPlugin(IdAttributePlugin);
     eleventy.addPlugin(InputPathToUrlTransformPlugin);
     eleventy.addPlugin(RenderPlugin);
 

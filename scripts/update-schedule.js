@@ -28,25 +28,52 @@ function getLocalTime(date, tz) {
     return new Date(date.getTime() - offset * 60 * 1000);
 }
 
+function addToCalendar(calendar, id, event) {
+    const {
+        summary,
+        location,
+        start: _start,
+        end: _end
+    } = event;
+
+    const date = getLocalTime(_start, "Europe/London");
+    const year = date.getUTCFullYear().toString(10);
+    const month = (date.getUTCMonth() + 1).toString(10).padStart(2, "0");
+    const day = date.getUTCDate().toString(10).padStart(2, "0");
+    const key = `${year}-${month}-${day}`;
+
+    const start = _start.dateOnly ? undefined : _start;
+    const end = _end.dateOnly ? undefined : _end;
+
+    calendar[key] ??= {events: []};
+    calendar[key].events.push({summary, start, end, location, calendar: id});
+}
+
 Promise.all(feeds.map(({id, src}) => ical.fromURL(src).then(calendar => ({id, calendar})))).then(async (calendars) => {
     const calendar = {};
 
     calendars.forEach(({id, calendar: {vcalendar, ...items}}) => {
         Object.values(items).forEach((data) => {
-            const {type, summary, location, class: visibility, start: _start, end: _end} = data;
-            if (type !== 'VEVENT' || visibility === 'PRIVATE' ) return;
+            const {
+                attendee,
+                type,
+                summary,
+                location,
+                rrule,
+                class: visibility,
+                start: _start,
+                end: _end
+            } = data;
+            if (attendee || type !== 'VEVENT' || visibility === 'PRIVATE' ) return;
 
-            const date = getLocalTime(_start, "Europe/London");
-            const year = date.getUTCFullYear().toString(10);
-            const month = (date.getUTCMonth() + 1).toString(10).padStart(2, "0");
-            const day = date.getUTCDate().toString(10).padStart(2, "0");
-            const key = `${year}-${month}-${day}`;
-
-            const start = _start.dateOnly ? undefined : _start;
-            const end = _end.dateOnly ? undefined : _end;
-
-            calendar[key] ??= {events: []};
-            calendar[key].events.push({summary, start, end, location, calendar: id});
+            if (rrule) {
+                ical.expandRecurringEvent(data, {
+                    from: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000),
+                    to: new Date(Date.now() + 4 * 31 * 24 * 60 * 60 * 1000)
+                }).forEach((event) => addToCalendar(calendar, id, {...event.event, ...event}));
+            } else {
+                addToCalendar(calendar, id, data);
+            }
         });
     });
 
