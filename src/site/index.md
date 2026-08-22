@@ -7,7 +7,7 @@ eleventyImport:
 {% columns 2 %}
     {% column 2 -%}
         <section aria-labelledby="welcome-to-plaistow-grove" class="module">
-            <h2 id="welcome-to-plaistow-grove" class="title">Welcome to Plaistow Grove</h2>
+            <h2 id="welcome-to-plaistow-grove" class="title"><a href="about.md">Welcome to Plaistow Grove</a></h2>
             <div class="multicol">
 
                 Plaistow Grove holds a rich suburban history, best known as the childhood home and creative sanctuary of David Bowie from 1955 to 1968, though its origins lie in the late-Victorian railway boom that transformed Bromley from a quiet Kentish market town into a London suburb.
@@ -22,8 +22,9 @@ eleventyImport:
     {%- endcolumn %}
     {% column -%}
         <section aria-labelledby="module-news-title" class="module">
-            <h2 id="module-news-title" class="title"><a href="news/index.md">Latest Updates & News</a></h2>
-            {% module "news.html", collections.news %}
+            <h2 id="module-news-title" class="title">Latest Updates & News</h2>
+            <h3 class="subtitle">[Bowie's House](bowies-house.md)</h3>
+            <p>[Planning Application 26/02597/FPA](https://planningaccess.bromley.gov.uk/s/detail/a0lTv000003WPnxIAG) from [the Heritage of London Trust](https://www.heritageoflondon.org/), seeks to convert David Bowie's childhood home into a visitor attraction. As part of the formal process, the Plaistow Grove Residents’ Association has produced [a detailed response to the proposed redevelopment](bowies-house.md) of 4 Plaistow Grove.</p>
         </section>
         <section aria-labelledby="module-schedule-title" class="module">
             <h2 id="module-schedule-title" class="title">For Your Diary</h2>

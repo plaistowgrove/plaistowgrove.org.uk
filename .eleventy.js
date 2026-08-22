@@ -3,8 +3,17 @@ import path from 'node:path';
 import { glob } from 'node:fs/promises';
 import { fileURLToPath } from 'url';
 
+import MarkdownIt from 'markdown-it';
+import outdent from 'outdent';
+
 import { IdAttributePlugin, InputPathToUrlTransformPlugin, RenderPlugin } from '@11ty/eleventy';
 const RenderManager = new RenderPlugin.RenderManager();
+
+const markdown = MarkdownIt({
+  html: true,
+  breaks: false,
+  linkify: true,
+});
 
 function fontPath(fontName) {
     return path.relative(
@@ -29,6 +38,8 @@ export default async function (eleventy) {
 		}
 	};
 
+    eleventy.setLibrary('md', markdown);
+
 	let templateConfig;
 	eleventy.on("eleventy.config", (tmplConfigInstance) => {
 		templateConfig = tmplConfigInstance;
@@ -43,6 +54,7 @@ export default async function (eleventy) {
     const fonts = {
         ["Montserrat"]: fontPath("montserrat"),
         ["Open Sans"]: fontPath("open-sans"),
+        ["Caveat"]: fontPath("caveat"),
     };
     
     eleventy.addCollection("fontfaces", async (collectionsApi) => {
@@ -69,6 +81,7 @@ export default async function (eleventy) {
             return f;
         }, {}));
     });
+
     eleventy.addCollection("schedule", function (collectionsApi) {
         const {schedule = {}} = collectionsApi.getAll()[0].data;
         const today = new Date();
@@ -104,6 +117,7 @@ export default async function (eleventy) {
 
         return date.toLocaleDateString(locale, options);
     });
+
     eleventy.addFilter("timestring", function(date, _options, locale = "en-GB") {
         const options = {
             timeZone: "Europe/London",
@@ -122,12 +136,32 @@ export default async function (eleventy) {
     });
     eleventy.addTemplateFormats("ncss");
 
+    eleventy.addShortcode("photo", function(src, alt, caption) {
+        const img = `<img src="${src}" alt="${alt}" />`;
+        const figcaption = caption ? `<figcaption>${caption}</figcaption>` : '';
+        return `<figure class="photo">${img}${figcaption}</figure>`;
+    });
+
+    eleventy.addPairedShortcode("full", function(children) {
+        const content = markdown.renderInline(children);
+        return outdent`<div class="full">${content}</div>`;
+    });
+    
+    eleventy.addPairedShortcode("pull", function(children, side, data) {
+        if (!side) return children;
+        const content = markdown.renderInline(children);
+        const attributes = Object.entries(data ?? {}).map(([key, val]) => ` data-${key}="${val}"`).join('');
+        return outdent`<div class="pull-${side}"${attributes}>${content}</div>`
+    });
+
     eleventy.addPairedShortcode("columns", function(content, count) {
         return `<div class="columns count-${count || 2}">${content}</div>`;
     });
+
     eleventy.addPairedShortcode("column", function(content, cols) {
         return `<div class="column${ cols > 1 ? ` span-${cols}` : ''}">${content}</div>`;
     });
+
     eleventy.addShortcode("module", async function(module, ...args) {
         const filepath = path.join(config.dir.input, config.dir.modules, '/', module);
         try {
@@ -138,6 +172,7 @@ export default async function (eleventy) {
             console.log(err);
         }
     });
+
     eleventy.addShortcode("ariaCurrent", function(file) {
         const {inputPath} = this.page;
         const {input: inputRoot} = this.eleventy.directories;
@@ -151,9 +186,11 @@ export default async function (eleventy) {
     eleventy.addPassthroughCopy('src/site/assets/*.css');
     eleventy.addPassthroughCopy('src/site/assets/*.js');
     eleventy.addPassthroughCopy('src/site/assets/images/*');
+    eleventy.addPassthroughCopy('src/site/assets/resources/*');
     eleventy.addPassthroughCopy({
         [fonts["Montserrat"]]: fontDir,
         [fonts["Open Sans"]]: fontDir,
+        [fonts["Caveat"]]: fontDir,
     });
 
     eleventy.addWatchTarget('src/site/assets');

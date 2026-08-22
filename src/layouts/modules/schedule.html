@@ -1,10 +1,14 @@
 <ol class="schedule">
+    <li class="static">
+        <p class="label">Community Catch-ups</p>
+        <p class="content" data-icon="💬 ">Join us on the third Sunday of every month in the Crown Pub!</p>
+    </li>
     {%- set empty = true -%}
     {%- for day in collections.schedule -%}
         {%- if day.events -%}
             {%- set empty = false -%}
             <li class="day">
-                <time datetime="{{ day.key }}">{{ day.date | datestring({weekday: "long"}) }} {{ day.date | datestring({day: "numeric", month: "numeric" }) }}</time>
+                <time class="label" datetime="{{ day.key }}">{{ day.date | datestring({weekday: "long"}) }} {{ day.date | datestring({day: "numeric", month: "numeric" }) }}</time>
                 <ul class="events">
                     {%- for event in day.events -%}
                         <li class="event" data-calendar="{{ event.calendar }}">
