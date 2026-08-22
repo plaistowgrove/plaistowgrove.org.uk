@@ -10,7 +10,7 @@ eleventyImport:
             <h2 id="welcome-to-plaistow-grove" class="title"><a href="about.md">Welcome to Plaistow Grove</a></h2>
             <div class="multicol">
 
-                Plaistow Grove holds a rich suburban history, best known as the childhood home and creative sanctuary of David Bowie from 1955 to 1968, though its origins lie in the late-Victorian railway boom that transformed Bromley from a quiet Kentish market town into a London suburb.
+                Plaistow Grove holds a rich suburban history, best known as <a href="bowies-house.md">the childhood home and creative sanctuary of David Bowie</a> from 1955 to 1968, though its origins lie in the late-Victorian railway boom that transformed Bromley from a quiet Kentish market town into a London suburb.
                 
                 Developed in the 1870s by the People’s Freehold Land Society on land from the Sundridge Park estate, the street was laid out perpendicular to the new Bromley North branch line to provide affordable terraced housing for local labourers, tradespeople, and railway workers.
                 
@@ -23,8 +23,10 @@ eleventyImport:
     {% column -%}
         <section aria-labelledby="module-news-title" class="module">
             <h2 id="module-news-title" class="title">Latest Updates & News</h2>
-            <h3 class="subtitle">[Bowie's House](bowies-house.md)</h3>
-            <p>[Planning Application 26/02597/FPA](https://planningaccess.bromley.gov.uk/s/detail/a0lTv000003WPnxIAG) from [the Heritage of London Trust](https://www.heritageoflondon.org/), seeks to convert David Bowie's childhood home into a visitor attraction. As part of the formal process, the Plaistow Grove Residents’ Association has produced [a detailed response to the proposed redevelopment](bowies-house.md) of 4 Plaistow Grove.</p>
+            <article class="news-item">
+                <h3 class="title">[Bowie's House](bowies-house.md)</h3>
+                <p>[Planning Application 26/02597/FPA](https://planningaccess.bromley.gov.uk/s/detail/a0lTv000003WPnxIAG) from [the Heritage of London Trust](https://www.heritageoflondon.org/), seeks to convert David Bowie's childhood home into a visitor attraction. As part of the formal process, the Plaistow Grove Residents’ Association has produced [a detailed response to the proposed redevelopment](bowies-house.md) of 4 Plaistow Grove.</p>
+            </article>
         </section>
         <section aria-labelledby="module-schedule-title" class="module">
             <h2 id="module-schedule-title" class="title">For Your Diary</h2>

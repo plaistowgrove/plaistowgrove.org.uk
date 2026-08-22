@@ -137,7 +137,7 @@ export default async function (eleventy) {
     eleventy.addTemplateFormats("ncss");
 
     eleventy.addShortcode("photo", function(src, alt, caption) {
-        const img = `<img src="${src}" alt="${alt}" />`;
+        const img = `<img src="${src}" alt="${alt}" loading="lazy" />`;
         const figcaption = caption ? `<figcaption>${caption}</figcaption>` : '';
         return `<figure class="photo">${img}${figcaption}</figure>`;
     });
