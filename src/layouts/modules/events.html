@@ -1,0 +1,12 @@
+<ol class="grid">
+    {%- for event in collections.events | slice(6) | first -%}
+        <li class="grid-item">
+            <article class="card">
+                <h3 class="title">
+                    <a href="{{ event.page.url }}" class="main">{{ event.data.title }}</a>
+                </h3>
+                <time datetime="{{ event.page.date.toISOString().split('T') | first }}">{{ event.page.date | datestring({ day: "numeric", month: "short", year: "2-digit" }) }}</time>
+            </article>
+        </li>
+    {%- endfor -%}
+</ol>

@@ -17,11 +17,19 @@
   "scripts": {
     "start": "npx @11ty/eleventy --serve",
     "watch": "npx @11ty/eleventy --watch",
-    "build": "npx @11ty/eleventy"
+    "build": "npm run build:schedule; npm run build:site",
+    "build:schedule": "node ./scripts/update-schedule.js",
+    "build:site": "npx @11ty/eleventy",
+    "crypto": "node ./scripts/crypto.js"
   },
   "dependencies": {
     "@11ty/eleventy": "^3.1.6",
+    "@fontsource/caveat": "^5.3.0",
     "@fontsource/montserrat": "^5.2.8",
-    "@fontsource/open-sans": "^5.2.7"
+    "@fontsource/open-sans": "^5.2.7",
+    "get-timezone-offset": "^1.0.5",
+    "markdown-it": "^15.0.0",
+    "node-ical": "^0.26.1",
+    "outdent": "^0.8.0"
   }
 }

@@ -1,0 +1,34 @@
+<ol class="schedule">
+    <li class="static">
+        <p class="label">Community Catch-ups</p>
+        <p class="content" data-icon="💬 ">Join us on the third Sunday of every month in the Crown Pub!</p>
+    </li>
+    {%- set empty = true -%}
+    {%- for day in collections.schedule -%}
+        {%- if day.events -%}
+            {%- set empty = false -%}
+            <li class="day">
+                <time class="label" datetime="{{ day.key }}">{{ day.date | datestring({weekday: "long"}) }} {{ day.date | datestring({day: "numeric", month: "numeric" }) }}</time>
+                <ul class="events">
+                    {%- for event in day.events -%}
+                        <li class="event" data-calendar="{{ event.calendar }}">
+                            {{ event.summary }}
+                            {% if event.start -%}
+                                &bullet; {{ event.start | timestring }}
+                                {%- if event.end -%}
+                                    -{{ event.end | timestring }}
+                                {%- endif -%}
+                            {%- endif %}
+                            {%- if event.location -%}<span>{{ event.location }}</span>{%- endif -%}
+                        </li>
+                    {%- endfor -%}
+                </ul>
+            </li>
+        {%- endif -%}
+    {%- endfor -%}
+    {%- if empty -%}
+        <li class="empty">
+            No events this week.
+        </li>
+    {%- endif -%}
+</ol>
