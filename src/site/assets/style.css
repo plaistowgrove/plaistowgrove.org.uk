@@ -203,6 +203,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
     margin: 0 0 1rem;
+    line-height: 1.75rem;
 }
 
 a[href] {
@@ -246,6 +247,7 @@ button:focus-visible {
 
 ul.info {
     margin: 0;
+    line-height: 1.75rem;
 
     li {
         margin-bottom: 1.5rem;
@@ -253,12 +255,12 @@ ul.info {
         list-style-type: "ℹ️  ";
 
         ul {
-            margin-top: 0.5rem;
+            margin-top: 0;
             padding-left: 1.25rem;
         }
 
         li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0;
             position: relative;
         }
 
@@ -681,6 +683,7 @@ body:has(.skip-link[href]:focus)::before {
         .events {
             margin: 0 0 0 1.5em;
             padding: 0;
+            line-height: 1.75rem;
             
             .event {
                 list-style-type: "- ";
