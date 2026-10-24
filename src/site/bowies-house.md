@@ -36,3 +36,12 @@ We will continue to make our response to the now-withdrawn application available
         <path d="m26.2 26.9h4.9v1.5h-3.1v1.8h2.9v1.5h-2.9v3.3h-1.8z"/>
     </svg>
 </a>
+
+## Sound and Vision: PGRA in the Media
+
+* [Bromley neighbours slam plans to turn David Bowie home into attraction](https://www.newsshopper.co.uk/news/26497723.bromley-neighbours-slam-plans-turn-david-bowie-home-attraction/) (Newsshopper – 26th August 2026)
+* [Furious row over plans to turn David Bowie's childhood London home into a tourist attraction](https://www.standard.co.uk/news/london/david-bowie-childhood-home-bromley-visitor-attraction-b1294688.html) (The Standard – 26 August 2026)
+* ['We live next to David Bowie's old Bromley house - planned visitor centre will ruin our peace'](https://www.mylondon.news/news/south-london-news/we-live-next-david-bowies-34514830) (MyLondon – 26 August 2026)
+* [Fury as David Bowie's Bromley home could bring 20,000 tourists to family street](https://www.msn.com/en-gb/entertainment/music/fury-as-david-bowie-s-bromley-home-could-bring-20-000-tourists-to-family-street/ar-AA2aYODH) (MSN – 26 August 2026)
+* [Row over plans to turn David Bowie's childhood home into tourist attraction as neighbours fear being 'invaded by thousands of fans'](https://www.dailymail.com/news/article-16081403/Row-plans-David-Bowie-childhood-home-tourist-attraction.html) (Daily Mail – 26 August 2026)
+* [Bowie house plan too big for street, locals say](https://www.bbc.co.uk/news/articles/czjz9mrd7rgo) (BBC – 27 August 2026)
