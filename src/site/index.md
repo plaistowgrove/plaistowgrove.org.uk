@@ -32,12 +32,6 @@ eleventyImport:
                 <p>Bromley Council is engaging in a consultation process on proposals for safer crossings around Plaistow Green. [Residents are encouraged to submit their feedback](https://forms.cloud.microsoft/pages/responsepage.aspx?id=C9XDjFokOUa6tIuHmsmDjDCul5wjpolKkWjtPDi01cVUQzVMMUtZT0IzQ1dFOE9SNUxHTlcxUjFOWi4u).
             </article>
         </section>
-        <section aria-labelledby="module-schedule-title" class="module">
-            <h2 id="module-schedule-title" class="title">For Your Diary</h2>
-            {% module "schedule.html" %}
-        </section>
-    {%- endcolumn %}
-    {% column -%}
         <section aria-labelledby="module-resources-title" class="module">
             <h2 id="module-resources-title" class="title">Local Resources</h2>
 
@@ -65,6 +59,12 @@ eleventyImport:
                     <li>Report or view problems on <a href="https://www.fixmystreet.com/">FixMyStreet</a></li>
                 </ul>
             </div>
+        </section>
+    {%- endcolumn %}
+    {% column -%}
+        <section aria-labelledby="module-schedule-title" class="module">
+            <h2 id="module-schedule-title" class="title">For Your Diary</h2>
+            {% module "schedule.html" %}
         </section>
     {%- endcolumn -%}
 {% endcolumns %}
