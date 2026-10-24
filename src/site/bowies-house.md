@@ -8,7 +8,7 @@ title: Bowie's House
 *A statement from PGRA in response:*
 > Residents of our quiet street were taken by surprise when the Heritage of London Trust announced their plans for the house to the world in January 2026, without consultation with residents or our local councillors. On the 22nd October, we were left confused again by their decision to withdraw their planning application without notice, feedback or answers to the many serious concerns and questions that our members have raised.
 
-We are making our original response to the application available to all, so residents and other interested parties within the wider community can read our submission, the evidence, and our reasoning behind it. We will continue to engage with the Heritage of London Trust, and other local stakeholders, as any new application emerges.
+We will continue to make our response to the now-withdrawn application available to all, so residents and other interested parties within the wider community can read our submission, the evidence, and our reasoning behind it. It is our hope that the Heritage of London Trust will take our concerns seriously in any subsequent application they submit. We will continue to engage with HoLT, and other local stakeholders, as the process progresses.
 
 {#
 <a href="/assets/resources/pgra-response-2602597FPA.pdf" class="action">
