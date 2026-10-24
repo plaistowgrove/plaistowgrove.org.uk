@@ -13,3 +13,7 @@
 [[redirects]]
   from = "/bowiehousetemplateletter"
   to = "https://docs.google.com/document/d/1MZQeFDSQoE-h5Rxd1CojAUGCrN8ov8ons2pr-1lY7C0"
+
+[[redirects]]
+  from = "/register"
+  to = "https://docs.google.com/forms/d/e/1FAIpQLSeJ46MlzCY-pWtKRqioDr7AnjRKTZD4YhoYSDG02MfAaI_JUQ/viewform"
