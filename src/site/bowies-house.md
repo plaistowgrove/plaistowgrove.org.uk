@@ -5,8 +5,8 @@ title: Bowie's House
 
 [Planning Application 26/02597/FPA](https://planningaccess.bromley.gov.uk/s/detail/a0lTv000003WPnxIAG), from [the Heritage of London Trust](https://www.heritageoflondon.org/), seeking to convert David Bowie's childhood home into a visitor attraction, has been withdrawn.
 
-*A statement from PGRA in response:*
-> Residents of our quiet street were taken by surprise when the Heritage of London Trust announced their plans for the house to the world in January 2026, without consultation with residents or our local councillors. On the 22nd October, we were left confused again by their decision to withdraw their planning application without notice, feedback or answers to the many serious concerns and questions that our members have raised.
+A statement from PGRA in response:
+> *In January 2026, residents of our quiet street were taken by surprise when the Heritage of London Trust announced their plans for the house to the world, without consultation. On 22 October, we were left confused again by their decision to withdraw their planning application without notice, feedback, or answers to the many serious concerns and questions that our members have raised.*
 
 We will continue to make our response to the now-withdrawn application available to all, so residents and other interested parties within the wider community can read our submission, the evidence, and our reasoning behind it. It is our hope that the Heritage of London Trust will take our concerns seriously in any subsequent application they submit. We will continue to engage with HoLT, and other local stakeholders, as the process progresses.
 
@@ -36,6 +36,7 @@ We will continue to make our response to the now-withdrawn application available
         <path d="m26.2 26.9h4.9v1.5h-3.1v1.8h2.9v1.5h-2.9v3.3h-1.8z"/>
     </svg>
 </a>
+
 
 ## Sound and Vision: PGRA in the Media
 
