@@ -25,7 +25,11 @@ eleventyImport:
             <h2 id="module-news-title" class="title">Latest Updates & News</h2>
             <article class="news-item">
                 <h3 class="title">[Bowie's House](bowies-house.md)</h3>
-                <p>[Planning Application 26/02597/FPA](https://planningaccess.bromley.gov.uk/s/detail/a0lTv000003WPnxIAG) from [the Heritage of London Trust](https://www.heritageoflondon.org/), seeks to convert David Bowie's childhood home into a visitor attraction. As part of the formal process, the Plaistow Grove Residents’ Association has produced [a detailed response to the proposed redevelopment](bowies-house.md) of 4 Plaistow Grove.</p>
+                <p>[Planning Application 26/02597/FPA](https://planningaccess.bromley.gov.uk/s/detail/a0lTv000003WPnxIAG) from [the Heritage of London Trust](https://www.heritageoflondon.org/), seeking to convert David Bowie's childhood home into a visitor attraction, has been withdrawn. Read more about [the Bowie House and PGRA's response](bowies-house.md).</p>
+            </article>
+            <article class="news-item">
+                <h3 class="title">Safer Crossings around Plaistow Green</h3>
+                <p>Bromley Council is engaging in a consultation process on proposals for safer crossings around Plaistow Green. [Residents are encouraged to submit their feedback](https://forms.cloud.microsoft/pages/responsepage.aspx?id=C9XDjFokOUa6tIuHmsmDjDCul5wjpolKkWjtPDi01cVUQzVMMUtZT0IzQ1dFOE9SNUxHTlcxUjFOWi4u).
             </article>
         </section>
         <section aria-labelledby="module-schedule-title" class="module">
