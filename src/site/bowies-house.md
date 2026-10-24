@@ -3,9 +3,12 @@ layout: page.html
 title: Bowie's House
 ---
 
-[Planning Application 26/02597/FPA](https://planningaccess.bromley.gov.uk/s/detail/a0lTv000003WPnxIAG), from [the Heritage of London Trust](https://www.heritageoflondon.org/), seeks to convert David Bowie's childhood home into a visitor attraction. As part of the formal process, the Plaistow Grove Residents’ Association has produced a detailed response to the proposed redevelopment of 4 Plaistow Grove.
+[Planning Application 26/02597/FPA](https://planningaccess.bromley.gov.uk/s/detail/a0lTv000003WPnxIAG), from [the Heritage of London Trust](https://www.heritageoflondon.org/), seeking to convert David Bowie's childhood home into a visitor attraction, has been withdrawn.
 
-We are making this response available to all, so residents and other interested parties within the wider community can read our submission, the evidence, and our reasoning behind it.
+*A statement from PGRA in response:*
+> Residents of our quiet street were taken by surprise when the Heritage of London Trust announced their plans for the house to the world in January 2026, without consultation with residents or our local councillors. On the 22nd October, we were left confused again by their decision to withdraw their planning application without notice, feedback or answers to the many serious concerns and questions that our members have raised.
+
+We are making our original response to the application available to all, so residents and other interested parties within the wider community can read our submission, the evidence, and our reasoning behind it. We will continue to engage with the Heritage of London Trust, and other local stakeholders, as any new application emerges.
 
 {#
 <a href="/assets/resources/pgra-response-2602597FPA.pdf" class="action">
